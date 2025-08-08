@@ -1,21 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Sorteador🍀</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <main>
-      <h1>Sorteador de Números 🍀</h1></br>
-      <p>Clique no botão para sortear um número entre 1 e 100.</p></br>
-      <button class="button" onClick="sortear()">🔄 Sorteador</button>
-      <button class="button" onClick="resetar()">🧹 Limpar</button></br>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorteador 🍀</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>Sorteador Aleatório 🤖</h1>
 
-      <div class="resultado" id="resultado"></div>
-      <h3>Sorteados:</h3></br>
-      <ul id="sorteados"></ul>
-    </main>
-    <script src="./sorte.js"></script>
-  </body>
+    <p>Escolha o tipo de sorteio:</p>
+    <label>
+      <input type="radio" name="tipoSorteio" value="lista" checked>
+      Usar lista de participantes
+    </label>
+    <label>
+      <input type="radio" name="tipoSorteio" value="numeros">
+      Sortear apenas números
+    </label>
+
+    <div id="modoLista" style="margin-top:15px;">
+      <h3>📋 Lista de Participantes</h3>
+      <textarea id="listaInput" placeholder="Cole aqui a lista (número + nome, um por linha)..."></textarea>
+      <button class="button" onclick="carregarLista()">Carregar Lista</button>
+    </div>
+
+    <div id="modoNumeros" style="display:none; margin-top:15px;">
+      <h3>🎯 Intervalo de Números</h3>
+      
+      <div class="intervalo-container">
+        <div class="campo-intervalo">
+          <label for="numInicio">De:</label>
+          <input type="number" id="numInicio" value="1">
+        </div>
+        <div class="campo-intervalo">
+          <label for="numFim">Até:</label>
+          <input type="number" id="numFim" value="100">
+        </div>
+        <button class="button" onclick="carregarNumeros()">Definir Intervalo</button>
+      </div>
+    </div>
+    
+
+    <hr>
+
+    <button class="button" onclick="sortear()">🎲 Sortear</button>
+    <button class="button" onclick="resetar()">♻️ Limpar</button>
+
+    <div id="contagem" style="font-size:2rem; text-align:center; margin-top:15px;"></div>
+    <div id="resultado" class="resultado"></div>
+
+    <h3>Sorteados:</h3>
+    <ul id="sorteados"></ul>
+  </main>
+
+  <script src="sorte.js"></script>
+</body>
 </html>

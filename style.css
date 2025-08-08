@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: white;
   min-height: 100vh;
@@ -47,11 +47,11 @@ h1 {
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 1rem;  
+  margin-top: 1rem;
 }
 
-.button {  
-  width: 100%;  
+.button {
+  width: 100%;
   max-width: 700px;
   padding: 0.75rem 1rem;
   background-color: #00c896;
@@ -61,7 +61,7 @@ h1 {
   font-size: 1rem;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;  
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .button:hover {
@@ -98,8 +98,90 @@ h3 {
   gap: 10px;
 }
 
-@media (max-width: 600px) {  
+textarea {
+  width: 100%;
+  height: 150px;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  resize: vertical;
+}
 
+/* Container flexível para inputs e botão */
+.intervalo-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+
+/* Cada campo numérico com label */
+.campo-intervalo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.campo-intervalo label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Inputs numéricos */
+.campo-intervalo input {
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  outline: none;
+  width: 100px;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.campo-intervalo input:focus {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Ajuste do botão para se alinhar com os inputs */
+.intervalo-container .button {
+  height: fit-content;
+  padding: 10px 16px;
+}
+
+
+#contagem {
+  display: none;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+  animation: pulse 1s infinite;
+  color: #ffeb3b;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
   .button {
     width: 100%;
     flex-direction: column;
