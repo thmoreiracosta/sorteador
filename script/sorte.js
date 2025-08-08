@@ -52,7 +52,7 @@ function sortear() {
     return;
   }
 
-  let tempo = 10;
+  let tempo = 5;
 
   // Mostra o contador e aplica a animação
   contagemDiv.style.display = "block";
